@@ -56,13 +56,6 @@
                 </td>
             </tr>
             <tr>
-                <th>分类标题：</th>
-                <td>
-                    <input type="text" class="lg" name="cate_title" value="{{$cate_info->cate_title}}">
-                    <p>标题可以写30个字</p>
-                </td>
-            </tr>
-            <tr>
                 <th>关键词：</th>
                 <td>
                     <textarea name="cate_keywords">{{$cate_info->cate_keywords}}</textarea>

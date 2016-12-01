@@ -51,8 +51,9 @@
                     <tr>
                         <th class="tc" width="5%">排序</th>
                         <th class="tc" width="5%">ID</th>
-                        <th>标题</th>
-                        <th>审核状态</th>
+                        <th>分类名称</th>
+                        <th>关键词</th>
+                        <th>描述</th>
                         <th>查看次数</th>
                         <th>操作</th>
                     </tr>
@@ -65,7 +66,8 @@
                         <td>
                             <a href="#">{{$v->_cate_name}}</a>
                         </td>
-                        <td>{{$v->cate_title}}</td>
+                        <td>{{$v->cate_keywords}}</td>
+                        <td>{{$v->cate_description}}</td>
                         <td>{{$v->cate_view}}</td>
                         <td>
                             <a href="{{url('admin/category/'.$v->cate_id.'/edit')}}">修改</a>

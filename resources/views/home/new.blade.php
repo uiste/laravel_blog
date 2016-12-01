@@ -41,6 +41,24 @@
                     @endforeach
                 </ul>
             </div>
+            <div class="duoshuo">
+                <!-- 多说评论框 start -->
+    <div class="ds-thread" style="width: 720px" data-thread-key="{{$field->art_id}}" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"uiste"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+            </div>
         </div>
         <aside class="right">
             <!-- Baidu Button BEGIN -->

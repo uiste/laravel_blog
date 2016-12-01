@@ -24,16 +24,25 @@ class IndexController extends CommonController
 
     public function cate($cate_id)
     {
-        //图文列表4篇（带分页）
-        $data = Article::where('cate_id',$cate_id)->orderBy('art_time','desc')->paginate(4);
-
-        //查看次数自增
-        Category::where('cate_id',$cate_id)->increment('cate_view');
-
         //当前分类的子分类
         $submenu = Category::where('cate_pid',$cate_id)->get();
 
         $field = Category::find($cate_id);
+
+        $cate_ids = array();
+        if($field != null){
+            foreach ($submenu as $value) {
+                $cate_ids[] = $value->cate_id;
+            }
+        }
+        $cate_ids[] = $cate_id;
+
+        //图文列表4篇（带分页）
+        $data = Article::whereIn('cate_id',$cate_ids)->orderBy('art_time','desc')->paginate(4);
+
+        //查看次数自增
+        Category::where('cate_id',$cate_id)->increment('cate_view');
+
         return view('home.list',compact('field','data','submenu'));
     }
 

@@ -73,6 +73,7 @@ class ArticleController extends CommonController
     // 更新文章
     public function update($art_id){
         $input = Input::except('_token','_method');
+        $input['art_time'] = strtotime($input['art_time']);
         $re = Article::where('art_id',$art_id)->update($input);
         if($re){
             return redirect('admin/article');
